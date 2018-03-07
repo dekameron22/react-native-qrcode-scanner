@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import {
   StyleSheet,
   Dimensions,
-  Vibration,
   Animated,
   Easing,
   View,
@@ -138,7 +137,6 @@ export default class QRCodeScanner extends Component {
 
   _handleBarCodeRead(e) {
     if (!this.state.scanning) {
-      Vibration.vibrate();
       this._setScanning(true);
       this.props.onRead(e)
       if (this.props.reactivate) {
